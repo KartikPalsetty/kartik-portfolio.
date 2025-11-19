@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kartik Palsetty – AI & Data Science Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Portfolio of Kartik Palsetty – Artificial Intelligence, Machine Learning and Data Analytics."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #050712;
+      --bg-alt: #0b0f1f;
+      --accent: #4ade80;
+      --accent-soft: rgba(74, 222, 128, 0.2);
+      --accent-strong: #22c55e;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --border-subtle: rgba(148, 163, 184, 0.3);
+      --card-radius: 18px;
+      --max-width: 1120px;
+      --shadow-soft: 0 22px 60px rgba(0, 0, 0, 0.65);
+      --transition-fast: 160ms ease-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px 20px 56px;
+    }
+
+    /* Top bar / logo + nav */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding: 14px 20px;
+      margin-left: -20px;
+      margin-right: -20px;
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.9),
+        rgba(15, 23, 42, 0.4),
+        transparent
+      );
+      backdrop-filter: blur(16px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle, rgba(74, 222, 128, 0.18), transparent);
+      box-shadow: 0 0 24px rgba(74, 222, 128, 0.5);
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-name {
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+    }
+
+    .brand-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      font-size: 0.86rem;
+    }
+
+    .nav-link {
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: var(--text-muted);
+      border: 1px solid transparent;
+      transition: var(--transition-fast);
+    }
+
+    .nav-link:hover {
+      color: var(--accent);
+      border-color: var(--accent-soft);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .nav-pill {
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      display: none;
+    }
+
+    @media (min-width: 720px) {
+      .nav-pill {
+        display: inline-flex;
+      }
+    }
+
+    /* Layout: hero + side sections */
+    .grid-layout {
+      display: grid;
+      gap: 26px;
+    }
+
+    @media (min-width: 900px) {
+      .grid-layout {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2.35fr);
+        align-items: flex-start;
+      }
+    }
+
+    /* Terminal intro / hero */
+    .terminal-card {
+      background: radial-gradient(circle at top left, #111827, #020617);
+      border-radius: 24px;
+      padding: 22px 22px 24px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .dots {
+      display: inline-flex;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #4b5563;
+    }
+
+    .dot.red {
+      background: #f97373;
+    }
+    .dot.yellow {
+      background: #facc15;
+    }
+    .dot.green {
+      background: #4ade80;
+    }
+
+    .terminal-body {
+      font-family: "Space Grotesk", ui-monospace, SFMono-Regular, Menlo, Monaco,
+        Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    .terminal-line {
+      display: block;
+    }
+
+    .terminal-prompt {
+      color: var(--accent);
+    }
+
+    .glow-bar {
+      position: absolute;
+      inset: auto -40px 0;
+      height: 60px;
+      background: radial-gradient(
+        circle at center,
+        rgba(94, 234, 212, 0.22),
+        transparent
+      );
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    /* Hero text */
+    .hero {
+      margin-top: 18px;
+    }
+
+    .hero-kicker {
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .hero-name {
+      font-size: clamp(2.1rem, 4vw, 2.6rem);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .hero-text {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin-bottom: 18px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      background: transparent;
+      color: var(--text-main);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      color: #022c22;
+      font-weight: 600;
+      box-shadow: 0 18px 40px rgba(34, 197, 94, 0.4);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      border-color: var(--border-subtle);
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    .hero-meta span {
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 5px 10px;
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    /* Section generic styles */
+    section {
+      margin-top: 30px;
+    }
+
+    .section-card {
+      background: linear-gradient(145deg, #020617, #020617, #020617);
+      border-radius: var(--card-radius);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 18px 18px 20px;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.65);
+    }
+
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .section-subtitle {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    /* Domain Expertise */
+    .expertise-grid {
+      display: grid;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    @media (min-width: 720px) {
+      .expertise-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .expertise-item {
+      border-radius: 14px;
+      border: 1px solid rgba(75, 85, 99, 0.8);
+      padding: 10px 12px;
+      background: radial-gradient(circle at top, #020617, #020617);
+      transition: var(--transition-fast);
+    }
+
+    .expertise-item:hover {
+      border-color: var(--accent-soft);
+      transform: translateY(-1px);
+    }
+
+    .expertise-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .expertise-text {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      border-radius: 999px;
+      padding: 3px 8px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--text-muted);
+    }
+
+    /* Highlighted Work & Projects */
+    .cards-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .project-card {
+      border-radius: 14px;
+      border: 1px solid rgba(75, 85, 99, 0.8);
+      padding: 10px 12px;
+      background: radial-gradient(circle at top left, #020617, #020617);
+      transition: var(--transition-fast);
+      cursor: default;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent-soft);
+      transform: translateY(-1px);
+    }
+
+    .project-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .project-meta {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .project-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .project-links {
+      font-size: 0.78rem;
+      display: flex;
+      gap: 10px;
+    }
+
+    .project-link {
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Credentials */
+    .credentials-cols {
+      display: grid;
+      gap: 12px;
+    }
+
+    @media (min-width: 720px) {
+      .credentials-cols {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .cred-block-title {
+      font-size: 0.86rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .cred-item {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    @media (min-width: 720px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      }
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 10px;
+    }
+
+    .form-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    input,
+    textarea {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 10px;
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      padding: 8px 10px;
+      color: var(--text-main);
+      font-size: 0.85rem;
+      outline: none;
+      transition: var(--transition-fast);
+      resize: vertical;
+      min-height: 38px;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.35);
+    }
+
+    .contact-details {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-line-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .contact-highlight {
+      color: var(--accent);
+      font-size: 0.86rem;
+    }
+
+    .social-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .social-pill {
+      border-radius: 999px;
+      padding: 6px 10px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      transition: var(--transition-fast);
+    }
+
+    .social-pill:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 20px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(55, 65, 81, 0.7);
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Small tweaks */
+    @media (max-width: 600px) {
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      nav {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- Top bar / nav -->
+    <header class="top-bar">
+      <div class="brand">
+        <div class="brand-logo">KP</div>
+        <div class="brand-text">
+          <div class="brand-name">KARTIK PALSETTY</div>
+          <div class="brand-title">AI · ML · DATA ANALYTICS</div>
+        </div>
+      </div>
+
+      <nav>
+        <span class="nav-pill">PORTFOLIO</span>
+        <a href="#expertise" class="nav-link">Expertise</a>
+        <a href="#work" class="nav-link">Work</a>
+        <a href="#credentials" class="nav-link">Credentials</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </header>
+
+    <div class="grid-layout">
+      <!-- Left: hero / terminal -->
+      <section>
+        <div class="terminal-card">
+          <div class="terminal-header">
+            <div class="dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span>KP_WEB · status: online</span>
+          </div>
+          <div class="terminal-body">
+            <span class="terminal-line">
+              <span class="terminal-prompt">&gt; KP_WEB</span> Initializing...
+            </span>
+            <span class="terminal-line">
+              <span class="terminal-prompt">&gt; Loading</span> data modules...
+            </span>
+            <span class="terminal-line">
+              <span class="terminal-prompt">&gt; Compiling</span> insights &amp; models...
+            </span>
+          </div>
+          <div class="glow-bar"></div>
+
+          <div class="hero">
+            <div class="hero-kicker">WELCOME</div>
+            <h1 class="hero-name">Hi, I’m Kartik Palsetty</h1>
+            <p class="hero-subtitle">
+              AI &amp; Machine Learning enthusiast with a focus on data-driven decision making.
+            </p>
+            <p class="hero-text">
+              I design and build analytical workflows that turn messy data into
+              clean signals for prediction, optimization and business value. My work
+              spans machine learning, statistical modeling, and practical deployment
+              on real-world datasets.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#credentials" class="btn btn-primary">View Credentials</a>
+              <a href="#work" class="btn btn-ghost">Highlighted Work</a>
+            </div>
+
+            <div class="hero-meta">
+              <span>📍 St. Louis, USA</span>
+              <span>🎓 Graduate student – Data &amp; Analytics</span>
+              <span>🤝 Open to collaborations</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Domain Expertise -->
+        <section id="expertise" class="section-card">
+          <h2 class="section-title">Domain Expertise</h2>
+          <p class="section-subtitle">
+            Areas where I can meaningfully contribute to impactful projects.
+          </p>
+
+          <div class="expertise-grid">
+            <div class="expertise-item">
+              <div class="expertise-title">Machine Learning &amp; AI</div>
+              <p class="expertise-text">
+                Supervised and unsupervised learning, model selection, evaluation,
+                and iteration on structured and unstructured datasets.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Classification</span>
+                <span class="tag">Regression</span>
+                <span class="tag">Clustering</span>
+              </div>
+            </div>
+
+            <div class="expertise-item">
+              <div class="expertise-title">Data Analytics &amp; Visualization</div>
+              <p class="expertise-text">
+                From raw CSVs to dashboards – cleaning, feature engineering and
+                visual storytelling that supports decisions.
+              </p>
+              <div class="tag-row">
+                <span class="tag">EDA</span>
+                <span class="tag">Dashboards</span>
+                <span class="tag">Storytelling</span>
+              </div>
+            </div>
+
+            <div class="expertise-item">
+              <div class="expertise-title">Deep Learning &amp; Computer Vision</div>
+              <p class="expertise-text">
+                Convolutional networks and modern architectures applied to image
+                classification and pattern recognition problems.
+              </p>
+              <div class="tag-row">
+                <span class="tag">CNNs</span>
+                <span class="tag">PyTorch</span>
+                <span class="tag">Image ML</span>
+              </div>
+            </div>
+
+            <div class="expertise-item">
+              <div class="expertise-title">Optimization &amp; Modeling</div>
+              <p class="expertise-text">
+                Quantitative thinking for problems like portfolio optimization,
+                resource allocation, and trade-off analysis.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Optimization</span>
+                <span class="tag">Time Series</span>
+                <span class="tag">Experimentation</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Right column: Work / Credentials / Projects / Contact -->
+      <section>
+        <!-- Highlighted Work -->
+        <section id="work" class="section-card">
+          <h2 class="section-title">Highlighted Work</h2>
+          <p class="section-subtitle">
+            A few representative projects that show how I approach problems.
+          </p>
+
+          <div class="cards-grid">
+            <article class="project-card">
+              <div class="project-title">Brain Tumor MRI Classification</div>
+              <div class="project-meta">Computer Vision · Deep Learning</div>
+              <p class="project-desc">
+                Built and evaluated CNN-based models on MRI scans to distinguish
+                tumor vs. non-tumor cases, with focus on robust preprocessing,
+                outlier handling, and fair evaluation metrics.
+              </p>
+              <div class="tag-row">
+                <span class="tag">PyTorch</span>
+                <span class="tag">Medical Imaging</span>
+                <span class="tag">Model Evaluation</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">GitHub repo</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-title">Portfolio Optimization with ML</div>
+              <div class="project-meta">Finance · Predictive Analytics</div>
+              <p class="project-desc">
+                Combined return forecasting models with optimization techniques to
+                construct portfolios balancing risk and reward under realistic
+                constraints.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Time Series</span>
+                <span class="tag">Python</span>
+                <span class="tag">Optimization</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">Project write-up</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-title">Property Price Prediction</div>
+              <div class="project-meta">Real Estate · Regression</div>
+              <p class="project-desc">
+                Modeled residential property prices using location, amenities and
+                structural features, with emphasis on feature engineering and
+                interpretability.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">EDA</span>
+                <span class="tag">Regression</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">View notebook</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Professional Credentials -->
+        <section id="credentials" class="section-card">
+          <h2 class="section-title">Professional Credentials</h2>
+          <p class="section-subtitle">
+            Education, experience and skills that shape how I solve problems.
+          </p>
+
+          <div class="credentials-cols">
+            <div>
+              <div class="cred-block-title">Education</div>
+              <p class="cred-item">
+                • MS in Data Analytics / Statistics – Washington University in St. Louis
+              </p>
+              <p class="cred-item">
+                • Engineering background with strong foundation in math &amp; programming
+              </p>
+            </div>
+
+            <div>
+              <div class="cred-block-title">Experience &amp; Roles</div>
+              <p class="cred-item">
+                • Coursework &amp; projects in ML, optimization, and data science
+              </p>
+              <p class="cred-item">
+                • Teaching / grading experience in engineering and analytics courses
+              </p>
+            </div>
+
+            <div>
+              <div class="cred-block-title">Tools &amp; Stack</div>
+              <p class="cred-item">
+                • Python (pandas, NumPy, scikit-learn, PyTorch)
+              </p>
+              <p class="cred-item">
+                • SQL, Jupyter, Git, basic cloud workflows
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Live Projects -->
+        <section id="projects" class="section-card">
+          <h2 class="section-title">Live Projects</h2>
+          <p class="section-subtitle">
+            Work that is actively evolving – experiments, drafts and prototypes.
+          </p>
+
+          <div class="cards-grid">
+            <article class="project-card">
+              <div class="project-title">Alpha – MRI Analysis Toolkit</div>
+              <div class="project-meta">Status: In Progress</div>
+              <p class="project-desc">
+                Modular codebase for loading, cleaning and exploring MRI datasets,
+                with hooks for multiple model backends and evaluation pipelines.
+              </p>
+            </article>
+
+            <article class="project-card">
+              <div class="project-title">Analytics Notebooks Collection</div>
+              <div class="project-meta">Status: Updating</div>
+              <p class="project-desc">
+                Curated Jupyter notebooks demonstrating EDA, modeling and
+                visualization patterns for different business and engineering
+                problems.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section-card">
+          <h2 class="section-title">Send a Message</h2>
+          <p class="section-subtitle">
+            Reach out for collaborations, questions, or just to say hi.
+          </p>
+
+          <div class="contact-grid">
+            <form
+              action="https://formspree.io/f/your-form-id"
+              method="POST"
+            >
+              <div class="form-field">
+                <label class="form-label" for="name">Name</label>
+                <input id="name" name="name" type="text" required />
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="email">Email</label>
+                <input id="email" name="_replyto" type="email" required />
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="subject">Subject</label>
+                <input id="subject" name="subject" type="text" />
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+            </form>
+
+            <div class="contact-details">
+              <div>
+                <div class="contact-line-label">Email</div>
+                <div class="contact-highlight">your.email@example.com</div>
+              </div>
+
+              <div>
+                <div class="contact-line-label">Location</div>
+                <div>St. Louis, USA</div>
+              </div>
+
+              <div>
+                <div class="contact-line-label">Connect</div>
+                <div class="social-row">
+                  <a
+                    href="https://github.com/your-github"
+                    target="_blank"
+                    class="social-pill"
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/your-linkedin"
+                    target="_blank"
+                    class="social-pill"
+                  >
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+
+              <div>
+                <div class="contact-line-label">Note</div>
+                <p>
+                  I’m always open to discussing new projects, ideas and
+                  collaborations. If you have something in mind, feel free to
+                  drop a short message.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+
+    <footer>
+      <span>© 2025 Kartik Palsetty. All rights reserved.</span>
+      <span>Designed with focus on clarity, data, and impact.</span>
+    </footer>
+  </main>
+
+  <script>
+    // Simple little effect: add a blinking cursor to terminal lines
+    document.addEventListener("DOMContentLoaded", function () {
+      const body = document.querySelector(".terminal-body");
+      if (!body) return;
+      const cursor = document.createElement("span");
+      cursor.textContent = "▌";
+      cursor.style.marginLeft = "4px";
+      cursor.style.color = "#4ade80";
+      cursor.style.animation = "blink 1s step-start infinite";
+      body.appendChild(cursor);
+
+      const style = document.createElement("style");
+      style.textContent = `
+        @keyframes blink {
+          50% { opacity: 0; }
+        }
+      `;
+      document.head.appendChild(style);
+    });
+  </script>
+</body>
+</html>

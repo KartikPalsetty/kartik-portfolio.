@@ -2,38 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Kartik Palsetty – AI & Data Science Portfolio</title>
+  <title>Kartik Palsetty | AI, Data & Strategy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Portfolio of Kartik Palsetty – Artificial Intelligence, Machine Learning and Data Analytics."
+    content="Kartik Palsetty helps people and businesses make smarter decisions with AI, data and analytics."
   />
+
+  <!-- Font: Sora -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   />
+
   <style>
     :root {
-      --bg: #050712;
-      --bg-alt: #0b0f1f;
-      --accent: #4ade80;
-      --accent-soft: rgba(74, 222, 128, 0.2);
-      --accent-strong: #22c55e;
+      --bg: #050816;
+      --bg-alt: #070b1a;
+      --bg-soft: #0b1120;
+      --accent: #f97316;
+      --accent-soft: rgba(249, 115, 22, 0.2);
+      --accent-strong: #fb923c;
       --text-main: #f9fafb;
       --text-muted: #9ca3af;
-      --border-subtle: rgba(148, 163, 184, 0.3);
-      --card-radius: 18px;
+      --border-subtle: rgba(148, 163, 184, 0.35);
+      --radius-card: 18px;
       --max-width: 1120px;
-      --shadow-soft: 0 22px 60px rgba(0, 0, 0, 0.65);
-      --transition-fast: 160ms ease-out;
+      --shadow-soft: 0 22px 60px rgba(0, 0, 0, 0.75);
+      --transition-fast: 180ms ease-out;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -41,43 +45,50 @@
     }
 
     body {
-      font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont,
+      font-family: "Sora", system-ui, -apple-system, BlinkMacSystemFont,
         "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+      background:
+        radial-gradient(circle at top, #1f2937 0, #020617 48%, #000 100%);
       color: var(--text-main);
       min-height: 100vh;
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
     }
 
-    main {
+    /* Layout container */
+    .page {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 24px 20px 56px;
+      padding: 20px 20px 56px;
     }
 
-    /* Top bar / logo + nav */
-    .top-bar {
+    /* Header / Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      margin: -20px -20px 28px;
+      padding: 14px 20px;
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.96),
+        rgba(15, 23, 42, 0.7),
+        transparent
+      );
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(31, 41, 55, 0.5);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 28px;
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      padding: 14px 20px;
-      margin-left: -20px;
-      margin-right: -20px;
-      background: linear-gradient(
-        to bottom,
-        rgba(15, 23, 42, 0.9),
-        rgba(15, 23, 42, 0.4),
-        transparent
-      );
-      backdrop-filter: blur(16px);
+      gap: 14px;
     }
 
     .brand {
@@ -94,11 +105,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle, rgba(74, 222, 128, 0.18), transparent);
-      box-shadow: 0 0 24px rgba(74, 222, 128, 0.5);
-      font-weight: 700;
-      font-size: 1.05rem;
+      background: radial-gradient(circle, rgba(249, 115, 22, 0.18), transparent);
+      box-shadow: 0 0 24px rgba(249, 115, 22, 0.6);
+      font-size: 0.9rem;
+      font-weight: 600;
       letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .brand-text {
@@ -108,22 +120,22 @@
     }
 
     .brand-name {
-      font-size: 0.86rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 600;
     }
 
-    .brand-title {
-      font-size: 0.98rem;
-      font-weight: 600;
+    .brand-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
     }
 
     nav {
       display: flex;
-      gap: 16px;
+      gap: 12px;
       align-items: center;
-      font-size: 0.86rem;
+      font-size: 0.82rem;
     }
 
     .nav-link {
@@ -132,6 +144,8 @@
       color: var(--text-muted);
       border: 1px solid transparent;
       transition: var(--transition-fast);
+      cursor: pointer;
+      white-space: nowrap;
     }
 
     .nav-link:hover {
@@ -140,124 +154,99 @@
       background: rgba(15, 23, 42, 0.8);
     }
 
-    .nav-pill {
-      border-radius: 999px;
-      border: 1px solid var(--border-subtle);
-      padding: 6px 12px;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-muted);
+    .nav-cta {
       display: none;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(249, 115, 22, 0.7);
+      color: var(--accent-strong);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.7rem;
+      background: rgba(17, 24, 39, 0.9);
+      cursor: pointer;
+      transition: var(--transition-fast);
     }
 
-    @media (min-width: 720px) {
-      .nav-pill {
+    .nav-cta:hover {
+      background: rgba(249, 115, 22, 0.1);
+    }
+
+    @media (min-width: 860px) {
+      .nav-cta {
         display: inline-flex;
       }
     }
 
-    /* Layout: hero + side sections */
-    .grid-layout {
+    @media (max-width: 720px) {
+      nav {
+        font-size: 0.78rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+    }
+
+    /* Hero layout */
+    .hero-layout {
       display: grid;
       gap: 26px;
     }
 
     @media (min-width: 900px) {
-      .grid-layout {
-        grid-template-columns: minmax(0, 3fr) minmax(0, 2.35fr);
+      .hero-layout {
+        grid-template-columns: minmax(0, 3.2fr) minmax(0, 2.2fr);
         align-items: flex-start;
       }
     }
 
-    /* Terminal intro / hero */
-    .terminal-card {
+    .hero-main {
       background: radial-gradient(circle at top left, #111827, #020617);
       border-radius: 24px;
-      padding: 22px 22px 24px;
+      padding: 24px 22px 26px;
       border: 1px solid rgba(148, 163, 184, 0.5);
       box-shadow: var(--shadow-soft);
       position: relative;
       overflow: hidden;
     }
 
-    .terminal-header {
+    .hero-pill-row {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.75rem;
       margin-bottom: 14px;
-      font-size: 0.78rem;
-      color: var(--text-muted);
     }
 
-    .dots {
-      display: inline-flex;
-      gap: 6px;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
+    .hero-pill {
       border-radius: 999px;
-      background: #4b5563;
-    }
-
-    .dot.red {
-      background: #f97373;
-    }
-    .dot.yellow {
-      background: #facc15;
-    }
-    .dot.green {
-      background: #4ade80;
-    }
-
-    .terminal-body {
-      font-family: "Space Grotesk", ui-monospace, SFMono-Regular, Menlo, Monaco,
-        Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 0.88rem;
-      line-height: 1.6;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 4px 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.17em;
       color: var(--text-muted);
-    }
-
-    .terminal-line {
-      display: block;
-    }
-
-    .terminal-prompt {
-      color: var(--accent);
-    }
-
-    .glow-bar {
-      position: absolute;
-      inset: auto -40px 0;
-      height: 60px;
-      background: radial-gradient(
-        circle at center,
-        rgba(94, 234, 212, 0.22),
-        transparent
-      );
-      opacity: 0.5;
-      pointer-events: none;
-    }
-
-    /* Hero text */
-    .hero {
-      margin-top: 18px;
+      background: rgba(15, 23, 42, 0.96);
     }
 
     .hero-kicker {
-      font-size: 0.86rem;
+      font-size: 0.82rem;
       text-transform: uppercase;
       letter-spacing: 0.18em;
-      color: var(--accent);
+      color: var(--accent-strong);
       margin-bottom: 8px;
     }
 
-    .hero-name {
-      font-size: clamp(2.1rem, 4vw, 2.6rem);
+    .hero-title {
+      font-size: clamp(2.2rem, 4.1vw, 2.8rem);
       font-weight: 700;
-      margin-bottom: 6px;
+      line-height: 1.12;
+      margin-bottom: 8px;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(120deg, #fed7aa, #fb923c);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     .hero-subtitle {
@@ -267,9 +256,9 @@
     }
 
     .hero-text {
-      font-size: 0.98rem;
+      font-size: 0.96rem;
       color: var(--text-muted);
-      max-width: 540px;
+      max-width: 520px;
       margin-bottom: 18px;
     }
 
@@ -277,7 +266,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .btn {
@@ -292,14 +281,13 @@
       cursor: pointer;
       transition: var(--transition-fast);
       background: transparent;
-      color: var(--text-main);
     }
 
     .btn-primary {
       background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-      color: #022c22;
+      color: #1f2933;
       font-weight: 600;
-      box-shadow: 0 18px 40px rgba(34, 197, 94, 0.4);
+      box-shadow: 0 18px 40px rgba(249, 115, 22, 0.5);
     }
 
     .btn-primary:hover {
@@ -310,137 +298,255 @@
     .btn-ghost {
       border-color: var(--border-subtle);
       color: var(--text-muted);
-      background: rgba(15, 23, 42, 0.7);
+      background: rgba(15, 23, 42, 0.9);
     }
 
     .btn-ghost:hover {
       border-color: var(--accent-soft);
-      color: var(--accent);
+      color: var(--accent-strong);
     }
 
     .hero-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
+      gap: 12px;
       font-size: 0.78rem;
       color: var(--text-muted);
-      margin-top: 8px;
+      margin-top: 6px;
     }
 
-    .hero-meta span {
+    .hero-meta-item {
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      border: 1px solid rgba(55, 65, 81, 0.8);
       padding: 5px 10px;
-      background: rgba(15, 23, 42, 0.7);
+      background: rgba(15, 23, 42, 0.9);
     }
 
-    /* Section generic styles */
+    .hero-glow {
+      position: absolute;
+      inset: auto -40px 0;
+      height: 64px;
+      background: radial-gradient(
+        circle at center,
+        rgba(249, 115, 22, 0.26),
+        transparent
+      );
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    /* Hero side card */
+    .hero-side {
+      display: grid;
+      gap: 16px;
+    }
+
+    .side-card {
+      background: radial-gradient(circle at top, #020617, #020617);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8);
+      padding: 14px 16px 16px;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .side-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--text-main);
+    }
+
+    .side-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+      font-size: 0.75rem;
+    }
+
+    .chip {
+      border-radius: 999px;
+      padding: 4px 9px;
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      gap: 10px;
+    }
+
+    .stat {
+      flex: 1;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .stat-value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent-strong);
+    }
+
+    /* Generic sections */
     section {
       margin-top: 30px;
     }
 
     .section-card {
-      background: linear-gradient(145deg, #020617, #020617, #020617);
-      border-radius: var(--card-radius);
+      background: linear-gradient(145deg, #020617, #020617);
+      border-radius: var(--radius-card);
       border: 1px solid rgba(148, 163, 184, 0.4);
       padding: 18px 18px 20px;
-      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.65);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75);
+      position: relative;
+      overflow: hidden;
     }
 
-    .section-title {
+    .section-heading {
       font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .section-subtitle {
-      font-size: 0.87rem;
-      color: var(--text-muted);
-      margin-bottom: 14px;
-    }
-
-    /* Domain Expertise */
-    .expertise-grid {
-      display: grid;
-      gap: 10px;
-      margin-top: 6px;
-    }
-
-    @media (min-width: 720px) {
-      .expertise-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    .expertise-item {
-      border-radius: 14px;
-      border: 1px solid rgba(75, 85, 99, 0.8);
-      padding: 10px 12px;
-      background: radial-gradient(circle at top, #020617, #020617);
-      transition: var(--transition-fast);
-    }
-
-    .expertise-item:hover {
-      border-color: var(--accent-soft);
-      transform: translateY(-1px);
-    }
-
-    .expertise-title {
-      font-size: 0.9rem;
       font-weight: 600;
       margin-bottom: 4px;
     }
 
-    .expertise-text {
-      font-size: 0.82rem;
+    .section-subheading {
+      font-size: 0.86rem;
       color: var(--text-muted);
-      margin-bottom: 6px;
+      margin-bottom: 12px;
     }
 
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
+    .section-tagline {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-strong);
+      margin-bottom: 4px;
+    }
+
+    /* Grid layouts */
+    .two-column {
+      display: grid;
+      gap: 16px;
+    }
+
+    @media (min-width: 880px) {
+      .two-column {
+        grid-template-columns: minmax(0, 1.6fr) minmax(0, 2fr);
+      }
+    }
+
+    /* About / What I do */
+    .about-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      display: grid;
+      gap: 8px;
+    }
+
+    .list-compact {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      list-style: none;
+      display: grid;
       gap: 6px;
     }
 
-    .tag {
-      font-size: 0.75rem;
-      border-radius: 999px;
-      padding: 3px 8px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      color: var(--text-muted);
+    .list-compact li::before {
+      content: "•";
+      color: var(--accent-strong);
+      margin-right: 6px;
     }
 
-    /* Highlighted Work & Projects */
+    /* Services / Offers */
     .cards-grid {
       display: grid;
       gap: 10px;
     }
 
-    .project-card {
+    @media (min-width: 720px) {
+      .cards-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .offer-card {
       border-radius: 14px;
-      border: 1px solid rgba(75, 85, 99, 0.8);
-      padding: 10px 12px;
-      background: radial-gradient(circle at top left, #020617, #020617);
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      padding: 11px 11px 13px;
+      background: radial-gradient(circle at top, #020617, #020617);
       transition: var(--transition-fast);
-      cursor: default;
+      font-size: 0.86rem;
     }
 
-    .project-card:hover {
+    .offer-card:hover {
       border-color: var(--accent-soft);
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
     }
 
-    .project-title {
+    .offer-title {
       font-size: 0.9rem;
       font-weight: 600;
       margin-bottom: 4px;
     }
 
-    .project-meta {
-      font-size: 0.76rem;
+    .offer-desc {
+      font-size: 0.82rem;
       color: var(--text-muted);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
+    }
+
+    .offer-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 0.72rem;
+    }
+
+    .tag {
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      padding: 3px 7px;
+      color: var(--text-muted);
+    }
+
+    /* Results / Projects */
+    .project-card {
+      border-radius: 14px;
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      padding: 10px 11px 12px;
+      background: radial-gradient(circle at top, #020617, #020617);
+      transition: var(--transition-fast);
+      font-size: 0.86rem;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent-soft);
+      transform: translateY(-2px);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.8rem;
+      margin-bottom: 4px;
+    }
+
+    .project-name {
+      font-weight: 600;
+    }
+
+    .project-label {
+      color: var(--accent-strong);
     }
 
     .project-desc {
@@ -449,41 +555,56 @@
       margin-bottom: 6px;
     }
 
-    .project-links {
-      font-size: 0.78rem;
+    .project-meta-row {
       display: flex;
+      justify-content: space-between;
+      align-items: center;
       gap: 10px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .project-meta-row small {
+      opacity: 0.8;
     }
 
     .project-link {
-      color: var(--accent);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
+      color: var(--accent-strong);
+      cursor: pointer;
     }
 
-    /* Credentials */
-    .credentials-cols {
+    /* Testimonials */
+    .testimonial-grid {
       display: grid;
       gap: 12px;
     }
 
     @media (min-width: 720px) {
-      .credentials-cols {
+      .testimonial-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
 
-    .cred-block-title {
-      font-size: 0.86rem;
-      font-weight: 600;
-      margin-bottom: 4px;
+    .testimonial-card {
+      border-radius: 14px;
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      padding: 10px 11px 12px;
+      background: radial-gradient(circle at top left, #020617, #020617);
+      font-size: 0.82rem;
+      color: var(--text-muted);
     }
 
-    .cred-item {
+    .testimonial-name {
+      font-weight: 600;
       font-size: 0.8rem;
+      margin-top: 6px;
+      color: var(--text-main);
+    }
+
+    .testimonial-role {
+      font-size: 0.75rem;
       color: var(--text-muted);
-      margin-bottom: 4px;
     }
 
     /* Contact */
@@ -492,9 +613,9 @@
       gap: 18px;
     }
 
-    @media (min-width: 720px) {
+    @media (min-width: 880px) {
       .contact-grid {
-        grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2.1fr);
       }
     }
 
@@ -512,469 +633,501 @@
 
     input,
     textarea {
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(15, 23, 42, 0.96);
       border-radius: 10px;
       border: 1px solid rgba(75, 85, 99, 0.9);
       padding: 8px 10px;
       color: var(--text-main);
-      font-size: 0.85rem;
+      font-size: 0.86rem;
       outline: none;
       transition: var(--transition-fast);
       resize: vertical;
-      min-height: 38px;
     }
 
     input:focus,
     textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.35);
+      border-color: var(--accent-strong);
+      box-shadow: 0 0 0 1px rgba(249, 115, 22, 0.35);
     }
 
-    .contact-details {
-      font-size: 0.82rem;
+    .contact-side {
+      font-size: 0.86rem;
       color: var(--text-muted);
-      display: flex;
-      flex-direction: column;
+      display: grid;
       gap: 10px;
     }
 
-    .contact-line-label {
+    .contact-label {
       font-size: 0.78rem;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       color: var(--text-muted);
-      margin-bottom: 2px;
     }
 
     .contact-highlight {
-      color: var(--accent);
-      font-size: 0.86rem;
+      font-size: 0.88rem;
+      color: var(--accent-strong);
     }
 
-    .social-row {
+    .contact-social-row {
       display: flex;
-      gap: 10px;
+      flex-wrap: wrap;
+      gap: 8px;
       margin-top: 6px;
+      font-size: 0.8rem;
     }
 
     .social-pill {
       border-radius: 999px;
-      padding: 6px 10px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      font-size: 0.8rem;
-      color: var(--text-muted);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      padding: 5px 10px;
+      cursor: pointer;
       transition: var(--transition-fast);
     }
 
     .social-pill:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+      border-color: var(--accent-strong);
+      color: var(--accent-strong);
     }
 
     /* Footer */
     footer {
-      margin-top: 20px;
+      margin-top: 22px;
       padding-top: 12px;
-      border-top: 1px solid rgba(55, 65, 81, 0.7);
+      border-top: 1px solid rgba(55, 65, 81, 0.72);
       font-size: 0.76rem;
       color: var(--text-muted);
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
       gap: 10px;
+      flex-wrap: wrap;
     }
 
-    /* Small tweaks */
+    /* Reveal on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 400ms ease-out, transform 400ms ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     @media (max-width: 600px) {
-      .top-bar {
+      header {
+        padding-bottom: 10px;
+      }
+      .nav-inner {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
-      }
-      nav {
-        flex-wrap: wrap;
       }
     }
   </style>
 </head>
 <body>
-  <main>
-    <!-- Top bar / nav -->
-    <header class="top-bar">
+  <header>
+    <div class="nav-inner">
       <div class="brand">
         <div class="brand-logo">KP</div>
         <div class="brand-text">
-          <div class="brand-name">KARTIK PALSETTY</div>
-          <div class="brand-title">AI · ML · DATA ANALYTICS</div>
+          <div class="brand-name">Kartik Palsetty</div>
+          <div class="brand-tag">AI · DATA · STRATEGY</div>
         </div>
       </div>
 
       <nav>
-        <span class="nav-pill">PORTFOLIO</span>
-        <a href="#expertise" class="nav-link">Expertise</a>
-        <a href="#work" class="nav-link">Work</a>
-        <a href="#credentials" class="nav-link">Credentials</a>
-        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">What I Do</a>
+        <a href="#results" class="nav-link">Results</a>
         <a href="#contact" class="nav-link">Contact</a>
+        <button class="nav-cta" onclick="scrollToSection('contact')">
+          LET'S TALK
+        </button>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <div class="grid-layout">
-      <!-- Left: hero / terminal -->
-      <section>
-        <div class="terminal-card">
-          <div class="terminal-header">
-            <div class="dots">
-              <span class="dot red"></span>
-              <span class="dot yellow"></span>
-              <span class="dot green"></span>
-            </div>
-            <span>KP_WEB · status: online</span>
-          </div>
-          <div class="terminal-body">
-            <span class="terminal-line">
-              <span class="terminal-prompt">&gt; KP_WEB</span> Initializing...
-            </span>
-            <span class="terminal-line">
-              <span class="terminal-prompt">&gt; Loading</span> data modules...
-            </span>
-            <span class="terminal-line">
-              <span class="terminal-prompt">&gt; Compiling</span> insights &amp; models...
-            </span>
-          </div>
-          <div class="glow-bar"></div>
+  <main class="page">
+    <!-- HERO -->
+    <section id="hero" class="hero-layout">
+      <div class="hero-main reveal">
+        <div class="hero-pill-row">
+          <div class="hero-pill">1:1 Guidance · Project Mentorship · Career Direction</div>
+        </div>
 
-          <div class="hero">
-            <div class="hero-kicker">WELCOME</div>
-            <h1 class="hero-name">Hi, I’m Kartik Palsetty</h1>
-            <p class="hero-subtitle">
-              AI &amp; Machine Learning enthusiast with a focus on data-driven decision making.
-            </p>
-            <p class="hero-text">
-              I design and build analytical workflows that turn messy data into
-              clean signals for prediction, optimization and business value. My work
-              spans machine learning, statistical modeling, and practical deployment
-              on real-world datasets.
-            </p>
+        <div class="hero-kicker">FOR STUDENTS & EARLY PROFESSIONALS</div>
+        <h1 class="hero-title">
+          Build a <span class="hero-highlight">sharper career</span>
+          with data, AI and clear direction.
+        </h1>
+        <p class="hero-subtitle">
+          I’m Kartik Palsetty — I help you turn confusion into a concrete plan
+          using AI, data and practical experience.
+        </p>
+        <p class="hero-text">
+          Whether you’re stuck choosing a path, overwhelmed by projects, or just
+          need someone who has been through the same grind, I break things down
+          into simple steps you can actually follow. No fluff, just clarity.
+        </p>
 
-            <div class="hero-buttons">
-              <a href="#credentials" class="btn btn-primary">View Credentials</a>
-              <a href="#work" class="btn btn-ghost">Highlighted Work</a>
-            </div>
+        <div class="hero-buttons">
+          <button class="btn btn-primary" onclick="scrollToSection('contact')">
+            Book a call
+          </button>
+          <button class="btn btn-ghost" onclick="scrollToSection('services')">
+            See how I can help
+          </button>
+        </div>
 
-            <div class="hero-meta">
-              <span>📍 St. Louis, USA</span>
-              <span>🎓 Graduate student – Data &amp; Analytics</span>
-              <span>🤝 Open to collaborations</span>
-            </div>
+        <div class="hero-meta">
+          <span class="hero-meta-item">🎓 Grad student in Data & Analytics</span>
+          <span class="hero-meta-item">📊 AI, ML & real projects</span>
+          <span class="hero-meta-item">🤝 Practical, honest guidance</span>
+        </div>
+
+        <div class="hero-glow"></div>
+      </div>
+
+      <div class="hero-side">
+        <div class="side-card reveal">
+          <div class="side-title">Who I typically work with</div>
+          <p>
+            • Students figuring out AI / data careers<br />
+            • People shifting into analytics roles<br />
+            • Anyone wanting structure, not vague advice
+          </p>
+          <div class="side-pill-row">
+            <span class="chip">CV & Profile Review</span>
+            <span class="chip">Project Roadmaps</span>
+            <span class="chip">Interview Direction</span>
           </div>
         </div>
 
-        <!-- Domain Expertise -->
-        <section id="expertise" class="section-card">
-          <h2 class="section-title">Domain Expertise</h2>
-          <p class="section-subtitle">
-            Areas where I can meaningfully contribute to impactful projects.
-          </p>
-
-          <div class="expertise-grid">
-            <div class="expertise-item">
-              <div class="expertise-title">Machine Learning &amp; AI</div>
-              <p class="expertise-text">
-                Supervised and unsupervised learning, model selection, evaluation,
-                and iteration on structured and unstructured datasets.
-              </p>
-              <div class="tag-row">
-                <span class="tag">Classification</span>
-                <span class="tag">Regression</span>
-                <span class="tag">Clustering</span>
-              </div>
+        <div class="side-card reveal">
+          <div class="side-title">Snapshot</div>
+          <div class="stat-row">
+            <div class="stat">
+              <div class="stat-label">Projects</div>
+              <div class="stat-value">15+</div>
             </div>
-
-            <div class="expertise-item">
-              <div class="expertise-title">Data Analytics &amp; Visualization</div>
-              <p class="expertise-text">
-                From raw CSVs to dashboards – cleaning, feature engineering and
-                visual storytelling that supports decisions.
-              </p>
-              <div class="tag-row">
-                <span class="tag">EDA</span>
-                <span class="tag">Dashboards</span>
-                <span class="tag">Storytelling</span>
-              </div>
-            </div>
-
-            <div class="expertise-item">
-              <div class="expertise-title">Deep Learning &amp; Computer Vision</div>
-              <p class="expertise-text">
-                Convolutional networks and modern architectures applied to image
-                classification and pattern recognition problems.
-              </p>
-              <div class="tag-row">
-                <span class="tag">CNNs</span>
-                <span class="tag">PyTorch</span>
-                <span class="tag">Image ML</span>
-              </div>
-            </div>
-
-            <div class="expertise-item">
-              <div class="expertise-title">Optimization &amp; Modeling</div>
-              <p class="expertise-text">
-                Quantitative thinking for problems like portfolio optimization,
-                resource allocation, and trade-off analysis.
-              </p>
-              <div class="tag-row">
-                <span class="tag">Optimization</span>
-                <span class="tag">Time Series</span>
-                <span class="tag">Experimentation</span>
-              </div>
+            <div class="stat">
+              <div class="stat-label">Focus</div>
+              <div class="stat-value">AI / ML</div>
             </div>
           </div>
-        </section>
-      </section>
+          <p style="margin-top:10px;">
+            From brain tumor MRI classification to portfolio optimization,
+            I’ve worked on projects that actually use data to make decisions.
+          </p>
+        </div>
+      </div>
+    </section>
 
-      <!-- Right column: Work / Credentials / Projects / Contact -->
-      <section>
-        <!-- Highlighted Work -->
-        <section id="work" class="section-card">
-          <h2 class="section-title">Highlighted Work</h2>
-          <p class="section-subtitle">
-            A few representative projects that show how I approach problems.
+    <!-- ABOUT -->
+    <section id="about" class="section-card reveal">
+      <div class="section-tagline">ABOUT</div>
+      <div class="two-column">
+        <div>
+          <h2 class="section-heading">I’ve been where you are right now.</h2>
+          <p class="section-subheading">
+            Confused between options, overloaded with content, not sure what
+            actually moves the needle. I get it.
           </p>
 
-          <div class="cards-grid">
-            <article class="project-card">
-              <div class="project-title">Brain Tumor MRI Classification</div>
-              <div class="project-meta">Computer Vision · Deep Learning</div>
-              <p class="project-desc">
-                Built and evaluated CNN-based models on MRI scans to distinguish
-                tumor vs. non-tumor cases, with focus on robust preprocessing,
-                outlier handling, and fair evaluation metrics.
-              </p>
-              <div class="tag-row">
-                <span class="tag">PyTorch</span>
-                <span class="tag">Medical Imaging</span>
-                <span class="tag">Model Evaluation</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="project-link">GitHub repo</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-title">Portfolio Optimization with ML</div>
-              <div class="project-meta">Finance · Predictive Analytics</div>
-              <p class="project-desc">
-                Combined return forecasting models with optimization techniques to
-                construct portfolios balancing risk and reward under realistic
-                constraints.
-              </p>
-              <div class="tag-row">
-                <span class="tag">Time Series</span>
-                <span class="tag">Python</span>
-                <span class="tag">Optimization</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="project-link">Project write-up</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-title">Property Price Prediction</div>
-              <div class="project-meta">Real Estate · Regression</div>
-              <p class="project-desc">
-                Modeled residential property prices using location, amenities and
-                structural features, with emphasis on feature engineering and
-                interpretability.
-              </p>
-              <div class="tag-row">
-                <span class="tag">Scikit-learn</span>
-                <span class="tag">EDA</span>
-                <span class="tag">Regression</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="project-link">View notebook</a>
-              </div>
-            </article>
+          <div class="about-text">
+            <p>
+              I’m currently a graduate student in Data Analytics / Statistics,
+              working with machine learning, optimization and real-world
+              projects. Along the way, I’ve helped classmates, juniors and
+              friends plan their path, structure their work and present it
+              cleanly.
+            </p>
+            <p>
+              My approach is simple: understand where you are, where you want to
+              go, and then build a realistic path that fits your bandwidth,
+              strengths and timeline.
+            </p>
+            <p>
+              No generic “just grind LeetCode” speeches. We look at your
+              profile, your story and your goals, and we design moves that make
+              sense for you.
+            </p>
           </div>
-        </section>
+        </div>
 
-        <!-- Professional Credentials -->
-        <section id="credentials" class="section-card">
-          <h2 class="section-title">Professional Credentials</h2>
-          <p class="section-subtitle">
-            Education, experience and skills that shape how I solve problems.
+        <div>
+          <h3 class="section-heading" style="font-size:0.96rem;margin-bottom:6px;">
+            What we can work on together
+          </h3>
+          <ul class="list-compact">
+            <li>Clarifying your direction in AI / data / analytics</li>
+            <li>Building or polishing project ideas that actually stand out</li>
+            <li>Structuring your CV, LinkedIn and portfolio</li>
+            <li>Turning messy work into a clean, confident narrative</li>
+            <li>Planning next steps for internships, MS, or role switches</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section-card reveal">
+      <div class="section-tagline">WHAT I DO</div>
+      <h2 class="section-heading">Ways I can help you right now</h2>
+      <p class="section-subheading">
+        Pick what matches where you are. We can always blend things in a session.
+      </p>
+
+      <div class="cards-grid">
+        <div class="offer-card">
+          <div class="offer-title">Profile & Direction Review</div>
+          <p class="offer-desc">
+            We look at your CV, LinkedIn and current path, then build a clear
+            direction and practical next steps for the next 3–6 months.
           </p>
-
-          <div class="credentials-cols">
-            <div>
-              <div class="cred-block-title">Education</div>
-              <p class="cred-item">
-                • MS in Data Analytics / Statistics – Washington University in St. Louis
-              </p>
-              <p class="cred-item">
-                • Engineering background with strong foundation in math &amp; programming
-              </p>
-            </div>
-
-            <div>
-              <div class="cred-block-title">Experience &amp; Roles</div>
-              <p class="cred-item">
-                • Coursework &amp; projects in ML, optimization, and data science
-              </p>
-              <p class="cred-item">
-                • Teaching / grading experience in engineering and analytics courses
-              </p>
-            </div>
-
-            <div>
-              <div class="cred-block-title">Tools &amp; Stack</div>
-              <p class="cred-item">
-                • Python (pandas, NumPy, scikit-learn, PyTorch)
-              </p>
-              <p class="cred-item">
-                • SQL, Jupyter, Git, basic cloud workflows
-              </p>
-            </div>
+          <div class="offer-tags">
+            <span class="tag">CV & LinkedIn</span>
+            <span class="tag">Roadmap</span>
+            <span class="tag">Clarity</span>
           </div>
-        </section>
+        </div>
 
-        <!-- Live Projects -->
-        <section id="projects" class="section-card">
-          <h2 class="section-title">Live Projects</h2>
-          <p class="section-subtitle">
-            Work that is actively evolving – experiments, drafts and prototypes.
+        <div class="offer-card">
+          <div class="offer-title">Project & Portfolio Guidance</div>
+          <p class="offer-desc">
+            You bring your ideas or existing projects. I help you refine them,
+            structure them and make them presentable to recruiters or professors.
           </p>
-
-          <div class="cards-grid">
-            <article class="project-card">
-              <div class="project-title">Alpha – MRI Analysis Toolkit</div>
-              <div class="project-meta">Status: In Progress</div>
-              <p class="project-desc">
-                Modular codebase for loading, cleaning and exploring MRI datasets,
-                with hooks for multiple model backends and evaluation pipelines.
-              </p>
-            </article>
-
-            <article class="project-card">
-              <div class="project-title">Analytics Notebooks Collection</div>
-              <div class="project-meta">Status: Updating</div>
-              <p class="project-desc">
-                Curated Jupyter notebooks demonstrating EDA, modeling and
-                visualization patterns for different business and engineering
-                problems.
-              </p>
-            </article>
+          <div class="offer-tags">
+            <span class="tag">AI / ML</span>
+            <span class="tag">Case Studies</span>
+            <span class="tag">Storytelling</span>
           </div>
-        </section>
+        </div>
 
-        <!-- Contact -->
-        <section id="contact" class="section-card">
-          <h2 class="section-title">Send a Message</h2>
-          <p class="section-subtitle">
-            Reach out for collaborations, questions, or just to say hi.
+        <div class="offer-card">
+          <div class="offer-title">Focused Q&A Session</div>
+          <p class="offer-desc">
+            A direct, honest conversation about anything you’re stuck on:
+            courses, exams, projects, visa confusion, switching directions, etc.
           </p>
+          <div class="offer-tags">
+            <span class="tag">Straight Talk</span>
+            <span class="tag">No Fluff</span>
+            <span class="tag">Actionable</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="contact-grid">
-            <form
-              action="https://formspree.io/f/your-form-id"
-              method="POST"
-            >
-              <div class="form-field">
-                <label class="form-label" for="name">Name</label>
-                <input id="name" name="name" type="text" required />
-              </div>
+    <!-- RESULTS / PROJECTS -->
+    <section id="results" class="section-card reveal">
+      <div class="section-tagline">RESULTS & PROJECTS</div>
+      <h2 class="section-heading">I don’t just talk about data. I work with it.</h2>
+      <p class="section-subheading">
+        A few projects that show how I think and what I build.
+      </p>
 
-              <div class="form-field">
-                <label class="form-label" for="email">Email</label>
-                <input id="email" name="_replyto" type="email" required />
-              </div>
+      <div class="cards-grid">
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-name">Brain Tumor MRI Classification</span>
+            <span class="project-label">Computer Vision</span>
+          </div>
+          <p class="project-desc">
+            Built and evaluated CNN-based models on MRI scans to distinguish
+            tumor vs. non-tumor cases, focusing on solid preprocessing, outlier
+            handling and reliable evaluation.
+          </p>
+          <div class="project-meta-row">
+            <small>Tech: PyTorch, Python, ML pipeline</small>
+            <span class="project-link">View repo (soon)</span>
+          </div>
+        </div>
 
-              <div class="form-field">
-                <label class="form-label" for="subject">Subject</label>
-                <input id="subject" name="subject" type="text" />
-              </div>
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-name">Portfolio Optimization with ML</span>
+            <span class="project-label">Finance & Analytics</span>
+          </div>
+          <p class="project-desc">
+            Built a workflow combining return prediction models with optimization
+            constraints to construct portfolios that balance risk and reward.
+          </p>
+          <div class="project-meta-row">
+            <small>Tech: Time series, Python, Optimization</small>
+            <span class="project-link">Read summary (soon)</span>
+          </div>
+        </div>
 
-              <div class="form-field">
-                <label class="form-label" for="message">Message</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-              </div>
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-name">Property Price Prediction</span>
+            <span class="project-label">Real Estate</span>
+          </div>
+          <p class="project-desc">
+            Modeled residential property prices using location and structural
+            features, with focus on feature engineering and interpretable models.
+          </p>
+          <div class="project-meta-row">
+            <small>Tech: Scikit-learn, EDA, Regression</small>
+            <span class="project-link">View notebook (soon)</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-              <button type="submit" class="btn btn-primary">
-                Send Message
-              </button>
-            </form>
+    <!-- SOCIAL PROOF / TESTIMONIALS -->
+    <section class="section-card reveal">
+      <div class="section-tagline">WHAT PEOPLE SAY</div>
+      <h2 class="section-heading">You don’t have to figure it out alone.</h2>
+      <p class="section-subheading">
+        A few words from people I’ve worked with, mentored or helped informally.
+      </p>
 
-            <div class="contact-details">
-              <div>
-                <div class="contact-line-label">Email</div>
-                <div class="contact-highlight">your.email@example.com</div>
-              </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          “Kartik helped me cut through all the noise and focus on a small set of
+          projects that actually matter for my goals. The roadmap we created
+          made things feel doable instead of overwhelming.”
+          <div class="testimonial-name">Student, Data Science</div>
+          <div class="testimonial-role">Planned portfolio & roadmap</div>
+        </div>
 
-              <div>
-                <div class="contact-line-label">Location</div>
-                <div>St. Louis, USA</div>
-              </div>
+        <div class="testimonial-card">
+          “His way of breaking down technical concepts into steps made a huge
+          difference for my understanding. It never felt like a lecture, more
+          like a conversation with someone who gets the struggle.”
+          <div class="testimonial-name">Peer, Machine Learning Course</div>
+          <div class="testimonial-role">Project & concept support</div>
+        </div>
 
-              <div>
-                <div class="contact-line-label">Connect</div>
-                <div class="social-row">
-                  <a
-                    href="https://github.com/your-github"
-                    target="_blank"
-                    class="social-pill"
-                  >
-                    GitHub
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/your-linkedin"
-                    target="_blank"
-                    class="social-pill"
-                  >
-                    LinkedIn
-                  </a>
-                </div>
-              </div>
+        <div class="testimonial-card">
+          “What I liked the most was the honesty. If something didn’t make
+          sense, he said it directly and then helped me find a better angle for
+          my profile.”
+          <div class="testimonial-name">Early-career Professional</div>
+          <div class="testimonial-role">Profile positioning</div>
+        </div>
+      </div>
+    </section>
 
-              <div>
-                <div class="contact-line-label">Note</div>
-                <p>
-                  I’m always open to discussing new projects, ideas and
-                  collaborations. If you have something in mind, feel free to
-                  drop a short message.
-                </p>
-              </div>
+    <!-- CONTACT -->
+    <section id="contact" class="section-card reveal">
+      <div class="section-tagline">CONTACT</div>
+      <h2 class="section-heading">If this feels like what you need, reach out.</h2>
+      <p class="section-subheading">
+        Send a short message with where you are right now and what you’re hoping
+        to work on. I’ll get back to you as soon as I can.
+      </p>
+
+      <div class="contact-grid">
+        <form
+          action="mailto:your.email@example.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <div class="form-field">
+            <label for="name" class="form-label">Name</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+
+          <div class="form-field">
+            <label for="email" class="form-label">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+
+          <div class="form-field">
+            <label for="topic" class="form-label">What do you want to talk about?</label>
+            <input id="topic" name="topic" type="text" />
+          </div>
+
+          <div class="form-field">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Send message
+          </button>
+        </form>
+
+        <div class="contact-side">
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-highlight">your.email@example.com</div>
+          </div>
+
+          <div>
+            <div class="contact-label">Based in</div>
+            <p>St. Louis, USA · Available online.</p>
+          </div>
+
+          <div>
+            <div class="contact-label">Connect</div>
+            <div class="contact-social-row">
+              <a
+                href="https://github.com/your-github"
+                target="_blank"
+                class="social-pill"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://www.linkedin.com/in/your-linkedin"
+                target="_blank"
+                class="social-pill"
+              >
+                LinkedIn
+              </a>
             </div>
           </div>
-        </section>
-      </section>
-    </div>
+
+          <div>
+            <div class="contact-label">How I reply</div>
+            <p>
+              I try to respond with something concrete: questions, suggestions,
+              or a rough next step — not just “thanks for reaching out”.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <footer>
-      <span>© 2025 Kartik Palsetty. All rights reserved.</span>
-      <span>Designed with focus on clarity, data, and impact.</span>
+      <span>© 2025 Kartik Palsetty</span>
+      <span>Built with focus, not fluff.</span>
     </footer>
   </main>
 
   <script>
-    // Simple little effect: add a blinking cursor to terminal lines
-    document.addEventListener("DOMContentLoaded", function () {
-      const body = document.querySelector(".terminal-body");
-      if (!body) return;
-      const cursor = document.createElement("span");
-      cursor.textContent = "▌";
-      cursor.style.marginLeft = "4px";
-      cursor.style.color = "#4ade80";
-      cursor.style.animation = "blink 1s step-start infinite";
-      body.appendChild(cursor);
+    // Smooth scroll helper
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
 
-      const style = document.createElement("style");
-      style.textContent = `
-        @keyframes blink {
-          50% { opacity: 0; }
-        }
-      `;
-      document.head.appendChild(style);
+    // Reveal on scroll
+    document.addEventListener("DOMContentLoaded", () => {
+      const revealEls = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      revealEls.forEach((el) => observer.observe(el));
     });
   </script>
 </body>
